@@ -14,10 +14,10 @@ function Register() {
 
   const registerUser = async (formData) => {
     try {
-      const response = await axios.post(
+     await axios.post(
         'https://music-app-backend-fn92.onrender.com/auth/register',
         {
-          userName: formData.userName, // Ensure correct casing
+          userName: formData.userName, 
           email: formData.email,
           password: formData.password,
           gender: formData.gender,
@@ -26,7 +26,7 @@ function Register() {
           headers: {
             'Content-Type': 'application/json',
           },
-          timeout: 5000, // Timeout setting
+          timeout: 5000, 
         }
       );
       enqueueSnackbar("Registered successfully", { variant: "success" });
@@ -57,7 +57,7 @@ function Register() {
           <input 
             type="text" 
             className="form-control" 
-            name="userName"  // Ensure correct casing
+            name="userName"
             value={formData.userName}
             onChange={handleChange}
             required
