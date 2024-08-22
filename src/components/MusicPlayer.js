@@ -21,6 +21,7 @@ function MusicPlayer({ song }) {
   return (
     <div className="music-player">
       <h5>Now Playing: {song.title} - {song.artist}</h5>
+      <div className='play'>
       <audio
         ref={audioRef}
         src={song.url}
@@ -37,6 +38,7 @@ function MusicPlayer({ song }) {
             Play
           </button>
         )}
+        </div>
       </div>
     </div>
   );
