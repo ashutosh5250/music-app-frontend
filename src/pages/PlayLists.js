@@ -25,6 +25,7 @@ function Playlists() {
           headers: {
             'Authorization': `Bearer ${getAuthToken()}`, 
           },
+          timeout: 5000,
         }
       );
       setPlaylists(response.data);

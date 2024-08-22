@@ -29,7 +29,6 @@ function SongLibrary() {
 
   return (
     <div>
-      <h2>Song Library</h2>
       {isLoading ? (
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           <CircularProgress />
