@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-
+import "./MusicPlayer.css"
 function MusicPlayer({ song }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);

@@ -29,7 +29,7 @@ function Playlists() {
       );
       setPlaylists(response.data);
     } catch (error) {
-      enqueueSnackbar(error, { variant: 'error' });
+      enqueueSnackbar("You need to be logged in to create a playlist. Please log in or sign up to continue", { variant: 'error' });
     } finally {
       setIsLoading(false);
     }
