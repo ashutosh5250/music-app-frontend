@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("https://thumbs.dreamstime.com/z/headphones-dark-background-music-accessories-bluetooth-headphones-cable-83679592.jpg?ct=jpeg");
+ object-fit: cover;
 }
 
 code {
