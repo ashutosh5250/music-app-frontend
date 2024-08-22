@@ -15,7 +15,7 @@ function Playlists() {
   const getAuthToken = () => {
     return localStorage.getItem('token');
   };
-
+console.log(getAuthToken());
   const fetchPlaylists = async () => {
     try {
       setIsLoading(true);
@@ -30,6 +30,7 @@ function Playlists() {
       );
       setPlaylists(response.data);
     } catch (error) {
+      console.log(error)
       enqueueSnackbar("You need to be logged in to create a playlist. Please log in or sign up to continue", { variant: 'error' });
     } finally {
       setIsLoading(false);
