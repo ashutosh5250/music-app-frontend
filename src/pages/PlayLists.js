@@ -23,7 +23,7 @@ console.log(getAuthToken());
         'https://music-app-backend-fn92.onrender.com/playlists/getPlaylists',
         {
           headers: {
-            'Authorization': `Bearer ${getAuthToken()}`, 
+            'authorization': `Bearer ${getAuthToken()}`, 
           },
           timeout: 5000,
         }
@@ -44,7 +44,7 @@ console.log(getAuthToken());
         'https://music-app-backend-fn92.onrender.com/song/getSong',
         {
           headers: {
-            'Authorization': `Bearer ${getAuthToken()}`, 
+            'authorization': `Bearer ${getAuthToken()}`, 
           },
         }
       );
@@ -70,8 +70,7 @@ console.log(getAuthToken());
         },
         {
           headers: {
-            'Authorization': `Bearer ${getAuthToken()}`, 
-            'Content-Type': 'application/json',
+            'authorization': `Bearer ${getAuthToken()}`
           },
         }
       );
@@ -98,8 +97,7 @@ console.log(getAuthToken());
         },
         {
           headers: {
-            'Authorization': `Bearer ${getAuthToken()}`, 
-            'Content-Type': 'application/json',
+            'authorization': `Bearer ${getAuthToken()}`
           },
         }
       );
