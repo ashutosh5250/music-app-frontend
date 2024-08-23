@@ -11,14 +11,23 @@ function SongLibrary() {
   const [selectedSong, setSelectedSong] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const songsPerPage = 7; 
-
+  const getAuthToken = () => {
+    return localStorage.getItem('token');
+  };
   const fetchSongs = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('https://music-app-backend-fn92.onrender.com/song/getSong');
+      const response = await axios.get('https://music-app-backend-fn92.onrender.com/song/getSong', {
+        headers: {
+          'authorization': `Bearer ${getAuthToken()}`
+        },
+        timeout: 5000,
+      });
       setSongs(response.data);
     } catch (error) {
-      enqueueSnackbar('Error fetching songs', { variant: 'error' });
+      enqueueSnackbar(
+        "You need to be logged in to play song. Please log in or sign up to continue",
+        { variant: 'error' })
     } finally {
       setLoading(false);
     }
@@ -54,7 +63,9 @@ function SongLibrary() {
       ) : (
         <>
           {songs.length === 0 ? (
+            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '30px' }}>
             <p>No songs available</p>
+            </div>
           ) : (
             <>
               <ul className="list-group">
